@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: local("Space Grotesk");
+}
+
+:root {
+  --ink: #12161c;
+  --surface: #1a2029;
+  --surface-line: #2a323f;
+  --paper: #ece8de;
+  --muted: #8b93a1;
+  --signal: #d9a441;
+  --signal-dim: #6f5a2e;
+
+  --font-display: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--surface-line);
+  padding: 48px 0 28px;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.site-sub {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 46ch;
+}
+
+.count-block {
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+.count-number {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--signal);
+  line-height: 1;
+  display: block;
+}
+
+.count-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- Grid ---------- */
+
+main {
+  padding: 40px 0 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0c0f14;
+  cursor: pointer;
+}
+
+.card-media video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.play-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+
+.card-media.is-playing .play-hint {
+  opacity: 0;
+}
+
+.play-hint svg {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+.duration-tag {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(12, 15, 20, 0.85);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.card-media.is-playing .duration-tag {
+  display: none;
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+}
+
+.card-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  word-break: break-word;
+}
+
+.card-meta {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* ---------- Empty state ---------- */
+
+.empty {
+  border: 1px dashed var(--surface-line);
+  border-radius: 3px;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty strong {
+  display: block;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.empty code {
+  font-family: var(--font-mono);
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 2px;
+  color: var(--signal);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--surface-line);
+  padding: 20px 0 40px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

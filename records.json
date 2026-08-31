@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-08-31T11:21:56.557Z",
+  "count": 2,
+  "records": [
+    {
+      "name": "win-usb-access-control-izah.mp4",
+      "title": "win usb access control izah",
+      "url": "./records/win-usb-access-control-izah.mp4",
+      "size": 20862551,
+      "sizeLabel": "19.9 MB",
+      "modified": "2026-08-31T10:57:05.636Z"
+    },
+    {
+      "name": "winserver2022-qurasdirilmasi.mp4",
+      "title": "winserver2022 qurasdirilmasi",
+      "url": "./records/winserver2022-qurasdirilmasi.mp4",
+      "size": 14227349,
+      "sizeLabel": "13.6 MB",
+      "modified": "2026-08-30T16:55:09.270Z"
+    }
+  ]
+}

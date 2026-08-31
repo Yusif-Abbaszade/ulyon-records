@@ -1,0 +1,9 @@
+name = "ulyon-records-host"
+compatibility_date = "2026-08-31"
+
+[assets]
+directory = "./records"
+
+routes = [
+  { pattern = "ulyon-records.yusif.qzz.io/*", zone_name = "yusif.qzz.io" }
+]
